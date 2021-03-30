@@ -32,12 +32,11 @@ export async function fakeAccountLogin(params) {
     //console.log('role.name: ' + userRole.getName());
     let roles = [];
     userRoles.forEach((userRole, index) => {
-      //console.log(`${userRole.getName()} ${userRole.attributes.logicalName}`);
+      console.log(`${userRole.getName()}`);
       roles.push(userRole.getName());
-      //roles.push(userRole.attributes.logicalName);
     });
 
-    let newResult = { ...user, currentAuthority: 'admin', status: 200, type: 'account' };
+    let newResult = { ...user, currentAuthority: roles, status: 200, type: 'account' };
     //console.log('newResult: ' + JSON.stringify(newResult));
     return newResult;
   
