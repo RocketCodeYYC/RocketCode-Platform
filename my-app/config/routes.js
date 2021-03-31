@@ -56,6 +56,12 @@ export default [
                 component: './TableList',
               },
               {
+                path: '/contacts',
+                name: 'contacts',
+                icon: 'plus-square',
+                component: './Contacts',
+              },
+              {
                 component: './404',
               },
             ],

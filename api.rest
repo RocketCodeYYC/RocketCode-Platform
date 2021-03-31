@@ -1,0 +1,37 @@
+
+
+@hostname = localhost
+@port = 1347
+@host = {{hostname}}:{{port}}
+
+# Variables
+@APPLICATION_ID = rocketcodeapp
+@REST_API_KEY = restApIkEY&3264
+
+
+###
+POST http://{{host}}/parse/functions/test
+Content-Type: application/json
+X-Parse-Application-Id: {{APPLICATION_ID}}
+X-Parse-REST-API-Key: {{REST_API_KEY}}
+
+
+###
+GET http://{{host}}/parse/classes/Contact
+Content-Type: application/json
+X-Parse-Application-Id: {{APPLICATION_ID}}
+X-Parse-REST-API-Key: {{REST_API_KEY}}
+
+
+###
+POST http://{{host}}/parse/functions/findEntities
+Content-Type: application/json
+X-Parse-Application-Id: {{APPLICATION_ID}}
+X-Parse-REST-API-Key: {{REST_API_KEY}}
+X-Parse-Session-Token: r:e94baeafc9e89d89ec0914abd0be990d
+
+{
+  "params": {
+    "resource": "Contact"
+  }
+}
